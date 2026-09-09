@@ -26,3 +26,5 @@ function reducer(callback, initialval) {
 
   return accumulator;
 }
+
+console.log(reducer(array));
