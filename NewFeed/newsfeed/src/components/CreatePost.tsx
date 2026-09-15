@@ -1,4 +1,10 @@
-export default function CreatePost() {
+import { useState } from "react";
+import { addImage, addPost, type Post } from "../Data/users";
+
+export default function CreatePost({ user, setIsCreated }) {
+  const [postText, setPostText] = useState<string>("");
+  const [postImg, setPostImg] = useState<string>("");
+
   const styles = {
     main: {
       textAlign: "center",
@@ -9,6 +15,23 @@ export default function CreatePost() {
     },
   };
 
+  const handleCreatePost = function (text, img) {
+    console.log(text);
+    console.log(img);
+
+    const newPost: Post = {
+      id: Date.now(),
+      text: text,
+      image: img,
+    };
+
+    addPost(user, newPost);
+
+    setIsCreated(false);
+
+    // addImage(user,img,)
+  };
+
   return (
     <div style={styles.main}>
       <textarea
@@ -17,11 +40,19 @@ export default function CreatePost() {
         cols={40}
         rows={10}
         placeholder='Enter content'
+        onChange={(e) => setPostText(e.target.value)}
       ></textarea>
 
-      <input style={styles.input} type='text' placeholder='Image Url' />
+      <input
+        style={styles.input}
+        type='text'
+        placeholder='Image Url'
+        onChange={(e) => setPostImg(e.target.value)}
+      />
 
-      <button>Add Post</button>
+      <button onClick={() => handleCreatePost(postText, postImg)}>
+        Add Post
+      </button>
     </div>
   );
 }

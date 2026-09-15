@@ -8,17 +8,18 @@ export default function HomeFeed({ user }) {
   const style = {
     main: {
       display: "flex",
-      height: "100vh",
+      height: "fit-content",
       position: "relative",
     },
     sidebar: {
       background: "orange",
       width: "150px",
-      height: "100%",
+      // height: "100%",
     },
     postFeed: {
       background: "grey",
       width: "calc(100% - 150px)",
+      padding: "10px",
     },
     todayDate: {
       background: "teal",
@@ -69,7 +70,7 @@ export default function HomeFeed({ user }) {
             <div style={style.cutButton} onClick={() => setIsCreatePost(false)}>
               X
             </div>
-            <CreatePost />
+            <CreatePost user={user} setIsCreated={setIsCreatePost} />
           </div>
         </div>
       ) : null}
@@ -82,7 +83,12 @@ export default function HomeFeed({ user }) {
         <div>
           {user.postCreated
             ? user.postCreated.map((ele) => (
-                <Post userName={user.name} userPosts={ele}></Post>
+                <Post
+                  userName={user.name}
+                  userPosts={ele}
+                  postLike={ele.like}
+                  postImg={ele.image}
+                ></Post>
               ))
             : "no post create one pls"}
         </div>

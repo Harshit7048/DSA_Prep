@@ -5,6 +5,9 @@ import HomeFeed from "./components/HomeFeed";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
+  const handleLogOut = function () {
+    setCurrentUser("");
+  };
 
   return (
     <>
@@ -13,6 +16,12 @@ function App() {
           <HomeFeed user={currentUser}></HomeFeed>
         ) : (
           <Login users={users} setCurrentUser={setCurrentUser} />
+        )}
+
+        {currentUser ? (
+          <button onClick={() => handleLogOut()}>Log Out</button>
+        ) : (
+          "Login to start"
         )}
       </div>
     </>
