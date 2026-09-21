@@ -1,0 +1,21 @@
+.main {
+  padding: 10px;
+  max-width: 1200px;
+  margin: auto;
+}
+.masonry {
+  column-count: 3;
+  column-gap: 10;
+}
+
+.img {
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
+  break-inside: "avoid";
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.img:hover {
+  transform: scale(1.05);
+}
