@@ -26,7 +26,7 @@ function deepOmit(val, keys) {
 
   // checking if the key is in object
   for (const key of Object.keys(val)) {
-    // if we got the key then pass this value and remainng value will be set in the results
+    // if we got the key then pass this value and remaining value will be set in the results
     if (keySet.has(key)) continue;
     // setting the remaining value and then again calling the deepOmit
     result[key] = deepOmit(val[key], keys);
@@ -47,4 +47,4 @@ let obj = {
 let arrObj = [1, 2, 3, 4, 5];
 console.log(deepOmit(arrObj));
 
-console.log(deepOmit(obj));
+console.log(deepOmit(obj, "e"));

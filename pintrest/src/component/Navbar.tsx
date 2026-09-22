@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useUser } from "../context/UserContext";
+import ProfileLook from "./ProfileLook";
 
 export default function NavBar({ setData, maindata }) {
   const [searchVal, setSearchVal] = useState("");
+  const { user } = useUser();
 
   const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 
@@ -25,7 +29,7 @@ export default function NavBar({ setData, maindata }) {
     }
   };
   return (
-    <div style={styles.nav}>
+    <div style={styles.nav} className='navbar'>
       <div>Logo</div>
       <div style={styles.inputArea}>
         <input
@@ -39,7 +43,9 @@ export default function NavBar({ setData, maindata }) {
           Search
         </button>
       </div>
-      <div>profile</div>
+      <div>
+        {user ? <ProfileLook user={user} /> : <Link to='/login'>Login</Link>}
+      </div>
     </div>
   );
 }

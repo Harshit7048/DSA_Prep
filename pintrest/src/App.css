@@ -1,1 +1,17 @@
- 
+.profile-look {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-look img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+.profile-look span {
+  font-size: 12px;
+  font-family: "Courier New", Courier, monospace;
+}
+.navbar {
+  height: fit-content;
+}
