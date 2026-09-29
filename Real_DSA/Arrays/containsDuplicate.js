@@ -21,3 +21,7 @@ function hasDuplicate(nums) {
 
 let arr = [1, 2, 3, 4, 5, 6, 1];
 console.log(hasDuplicate(arr));
+
+// This is just as same as the TwoSum but we just have to check and pass the true false
+
+// there are many ways of doing this but we are going with the sort method it reduce the time complexity to just one pass

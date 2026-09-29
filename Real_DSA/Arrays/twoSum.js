@@ -19,3 +19,7 @@ function twoSum(nums, target) {
 console.log(twoSum(nums1, 7));
 
 console.log("run done");
+
+// Two sum is the typical question to start the DSA , in this one ew had to return the indices of the elements that sums up to the given target
+
+// here we used the brute force with the for loop. time complexity -> O(n^2)
