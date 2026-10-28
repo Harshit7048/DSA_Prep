@@ -37,6 +37,6 @@ function topKEle(nums, k) {
   return results;
 }
 
-let nums = [1, 2, 2, 2, 3, 3, 5, 4];
+let nums = [1, 2, 2, 2, 3, 3, 5, 4, 4, 6, 6, 6, 8, 8, 8, 8, 8, 8];
 
 console.log(topKEle(nums, 2));
