@@ -1,0 +1,12 @@
+Let's see what is stack and how it works
+
+stack is a memory data structure
+
+first of all where we will use stack - it is used in all primitive type
+
+
+means we will have the duplicate of the given real value 
+
+Note:
+
+so here's what happens in a stack when we are working with primitive data types and when we assign something new it gets stored in stack but when we declare another value with a new name but refrenceing the old one it will make a duplicate of the value and it will be shown in the stack
